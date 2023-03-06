@@ -11,7 +11,7 @@ const limiter = rateLimit({
 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 })
 app.use(limiter)
-const port = 6666;
+const port = 9999;
 
 /*
 An account can be verified
