@@ -19,6 +19,6 @@ animated profiles for 3rd Party Clients ?
 
 i would personal love those implementations and i will try to learn building web extensions in the meantime??
 
-## Thoughts:
+### Thoughts:
 
 i know devRant is kind off ded but i think its a fun place and updates to it really wouldnt hurt!
