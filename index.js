@@ -39,10 +39,10 @@ app.get("/register/:devRant_user_id/:password",
     require("./scripts/register.js")
 )
 
-app.post("/block/:user_id",
+/* app.post("/block/:user_id",
     require("./scripts/block.js")
 )
-/* params: 
+params: 
 user_id, devRant_user_id, target_id, app_id, key
 */
 
