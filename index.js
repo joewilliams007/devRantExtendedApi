@@ -39,6 +39,10 @@ app.get("/register/:devRant_user_id/:password",
     require("./scripts/register.js")
 )
 
+app.get("/verify/key/:verify_key",
+    require("./scripts/verify_key.js")
+)
+
 /* app.post("/block/:user_id",
     require("./scripts/block.js")
 )
