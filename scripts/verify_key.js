@@ -70,7 +70,7 @@ module.exports = (req, res) => {
         db.query(
 
             `SELECT user_id FROM Users
-            WHERE user_devRant_user_id=${dbRes.user_devRant_user_id}`
+            WHERE user_devRant_user_id=${dbRes[0].user_devRant_user_id}`
 
             , function (error, results, fields) {
                 if (error) console.log(error.message);
