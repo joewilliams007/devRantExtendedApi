@@ -44,7 +44,7 @@ module.exports = (req, res) => {
 
                 var dbRes = JSON.parse(JSON.stringify(results))
 
-                if (dbRes.verify_key == verify_key) {
+                if (dbRes[0].verify_key == verify_key) {
                     finishRegistration(element, dbRes)
                 } else {
                     console.log("wrong key pair "+dbRes[0].verify_key+" "+verify_key)
@@ -54,8 +54,8 @@ module.exports = (req, res) => {
 
     function finishRegistration (element, dbRes) {
         db.query(
-            `INSERT INTO Users (user_devRant_user_id, password, verify_key, timestamp) 
-            VALUES (${dbRes.user_devRant_user_id},"${dbRes.password}","${verify_key}",${timestamp})`
+            `INSERT INTO Users (user_devRant_user_id, user_username, password, verify_key, timestamp) 
+            VALUES (${dbRes.user_devRant_user_id},"${element.user_username}",${dbRes.password}","${verify_key}",${timestamp})`
             , function (error, results, fields) {
 
                 if (error) {
