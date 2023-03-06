@@ -51,3 +51,9 @@ html,body
     padding: 10px;
    
   }
+
+  
+  @font-face {
+    font-family: 'nunito';
+    src: URL('../nunito.ttf') format('truetype');
+  }
