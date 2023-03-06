@@ -9,7 +9,7 @@ module.exports = (req, res) => {
 
     function checkExistence() {
         db.query(
-            `SELECT COUNT(*) AS RowCount FROM Users WHERE devRant_user_id=${devRant_user_id}`
+            `SELECT COUNT(*) AS RowCount FROM Users WHERE user_devRant_user_id=${devRant_user_id}`
             , function (error, results, fields) {
                 if (error) {
                     console.log(error)
