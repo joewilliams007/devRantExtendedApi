@@ -65,6 +65,7 @@ html,body
     width: 20%;
   }
 
+
   div.vertical-line{
     width: 1px; /* Line width */
     background-color: rgb(255, 255, 255); /* Line color */
