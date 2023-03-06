@@ -6,14 +6,6 @@ module.exports = (req, res) => {
     var post_id = 6436619
 
              
-    res.status(200).json({
-        success: true,
-        error: false,
-        verify_key: verify_key,
-        post_id: post_id,
-        message: "please enter the verification key in the post"
-    })
-                 
     getJSON('https://www.devrant.io/api/devrant/rants/'+post_id+'?app=3')
 
     .then(function (response) {
@@ -28,7 +20,7 @@ module.exports = (req, res) => {
     });
 
     function proccessResponse(response) {
-        response.forEach(element => {
+        response.comments.forEach(element => {
 
             if (element.body.includes(verify_key)) {
                 console.log(element.user_id);
