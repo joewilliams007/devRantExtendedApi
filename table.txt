@@ -28,6 +28,17 @@ PRIMARY KEY ( user_id )
 );
 
 
+CREATE TABLE Verify (
+verify_id INT NOT NULL AUTO_INCREMENT,
+
+user_devRant_user_id int,
+password varchar(255),
+verify_key varchar(255),
+timestamp int,
+
+PRIMARY KEY ( verify_id )
+);
+
 CREATE TABLE Blocked (
 block_id INT NOT NULL AUTO_INCREMENT,
 user_id int,
