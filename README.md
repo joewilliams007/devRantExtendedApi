@@ -15,7 +15,7 @@ awards ? use own points to give out awards. the API will keep track of how many 
 
 profiles ? steam - discord - ...
 
-animated profiles for 3rd Party Clients ?
+animated gif for 3rd Party Clients such as a small pet gif ?
 
 ## Reasoning:
 
