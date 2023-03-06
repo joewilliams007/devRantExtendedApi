@@ -54,14 +54,25 @@ module.exports = (req, res) => {
 
     function finishRegistration (element, dbRes) {
         db.query(
-            `INSERT INTO Users (user_devRant_user_id, user_username, password, timestamp) 
-            VALUES (${dbRes[0].user_devRant_user_id},"${element.user_username}","${dbRes[0].password}",${timestamp})`
+            `DELETE * FROM Users WHERE user_devRant_user_id=${dbRes[0].user_devRant_user_id}`
             , function (error, results, fields) {
 
                 if (error) {
                     console.log(error.message);
                 } else {
-                    returnUserId(dbRes);
+
+                    db.query(
+                        `INSERT INTO Users (user_devRant_user_id, user_username, password, timestamp) 
+                        VALUES (${dbRes[0].user_devRant_user_id},"${element.user_username}","${dbRes[0].password}",${timestamp})`
+                        , function (error, results, fields) {
+            
+                            if (error) {
+                                console.log(error.message);
+                            } else {
+                                returnUserId(dbRes);
+                            }
+                    })
+
                 }
         })
     }
@@ -73,17 +84,19 @@ module.exports = (req, res) => {
             WHERE user_devRant_user_id=${dbRes[0].user_devRant_user_id}`
 
             , function (error, results, fields) {
-                if (error) console.log(error.message);
+                if (error) {
+                    console.log(error.message);
+                } else {
+                    var dbRes = JSON.parse(JSON.stringify(results))
 
-                var dbRes = JSON.parse(JSON.stringify(results))
-
-                res.status(200).json({
-                    success: true,
-                    error: false,
-                    user_id: dbRes[0].user_id,
-                    message: "success"
-                })         
-                console.log('registration successfull');  
+                    res.status(200).json({
+                        success: true,
+                        error: false,
+                        user_id: dbRes[0].user_id,
+                        message: "success"
+                    })         
+                    console.log('registration successfull');  
+                }
         });
     }
 }
