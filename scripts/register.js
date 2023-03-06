@@ -1,6 +1,5 @@
 module.exports = (req, res) => {
     var { devRant_user_id } = req.params;
-    var { magicword } = req.params;
     var { password } = req.params;
 
     var db = require('./db');
@@ -11,8 +10,9 @@ module.exports = (req, res) => {
         db.query(
             `SELECT COUNT(*) AS RowCount FROM Users WHERE devRant_user_id="${devRant_user_id}"`
             , function (error, results, fields) {
-    
-                if (error) return returnError();
+                if (error) {
+
+                }
     
                 if (Number(results[0].RowCount) == 0) {
                     createExistence();
@@ -30,7 +30,9 @@ module.exports = (req, res) => {
             VALUES (${devRant_user_id},"${username}",${timestamp})`
             , function (error, results, fields) {
 
-            if (error) return returnError();
+                if (error) {
+
+                }
         })
     }
 
