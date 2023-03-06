@@ -1,0 +1,67 @@
+# This file shows the structure of the database. The commands can be re-used to re-create the database.
+
+## Creating database
+
+DROP DATABASE db_devrant_extended;
+CREATE DATABASE db_devrant_extended;
+ALTER DATABASE db_devrant_extended CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+USE db_devrant_extended;
+
+## Creating tables
+
+CREATE TABLE Users (
+user_id INT NOT NULL AUTO_INCREMENT,
+user_username varchar(255),
+user_devRant_user_id int DEFAULT null,
+
+access_key varchar(2000),
+new_access_key varchar(2000),
+
+used_plusplus int DEFAULT 0,
+animation_url varchar(2000) DEFAULT null,
+banner_url varchar(2000) DEFAULT null,
+
+steam_url varchar(255) DEFAULT null,
+discord_url varchar(255) DEFAULT null,
+
+timestamp int,
+PRIMARY KEY ( user_id )
+);
+
+
+CREATE TABLE Blocked (
+block_id INT NOT NULL AUTO_INCREMENT,
+user_id int,
+devRant_user_id int,
+reason varchar(2000) DEFAULT null,
+timestamp int,
+PRIMARY KEY ( block_id ),
+FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+CREATE TABLE Chat (
+message_id INT NOT NULL AUTO_INCREMENT,
+user_id int,
+message TEXT,
+timestamp int,
+PRIMARY KEY ( message_id ),
+FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+CREATE TABLE Notif (
+notif_id INT NOT NULL AUTO_INCREMENT,
+user_id int,
+action_id int,
+from_user_id int,
+from_devRant_user_id int,
+type varchar(2000),
+seen BOOLEAN DEFAULT false,
+timestamp int,
+PRIMARY KEY ( notif_id ),
+FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+// Notif "type" can be:
+
+mention (in chat)
+award
