@@ -55,7 +55,7 @@ module.exports = (req, res) => {
     function finishRegistration (element, dbRes) {
         db.query(
             `INSERT INTO Users (user_devRant_user_id, user_username, password, timestamp) 
-            VALUES (${dbRes.user_devRant_user_id},"${element.user_username}","${dbRes.password}",${timestamp})`
+            VALUES (${dbRes[0].user_devRant_user_id},"${element.user_username}","${dbRes[0].password}",${timestamp})`
             , function (error, results, fields) {
 
                 if (error) {
