@@ -3,11 +3,11 @@ Open-Source API Server created to add features on top of "official" devRant API.
 
 ## Featuring: 
 
-blocking users posts such as from
-
-@AOK and @Jassole (no offense)
+blocking users posts such as from @AOK and @Jassole (no offense)
 
 a public chat
+
+downloading database for your own use
 
 ### Considering:
 
