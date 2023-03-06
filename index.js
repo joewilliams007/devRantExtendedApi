@@ -35,8 +35,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 
-app.get("/code/:devRant_user_id",
-    require("./scripts/code.js")
+app.get("/register/:devRant_user_id/:password",
+    require("./scripts/register.js")
 )
 
 app.post("/block/:user_id",

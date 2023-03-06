@@ -12,10 +12,9 @@ USE db_devrant_extended;
 CREATE TABLE Users (
 user_id INT NOT NULL AUTO_INCREMENT,
 user_username varchar(255),
-user_devRant_user_id int DEFAULT null,
+user_devRant_user_id int,
 
-access_key varchar(2000),
-new_access_key varchar(2000),
+password varchar(255),
 
 used_plusplus int DEFAULT 0,
 animation_url varchar(2000) DEFAULT null,

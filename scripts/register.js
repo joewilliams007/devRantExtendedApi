@@ -1,5 +1,7 @@
 module.exports = (req, res) => {
     var { devRant_user_id } = req.params;
+    var { magicword } = req.params;
+    var { password } = req.params;
 
     var db = require('./db');
 
@@ -24,7 +26,7 @@ module.exports = (req, res) => {
     function createExistence() {
         
         db.query(
-            `INSERT INTO Users (user_devRant_user_id, user_username, timestamp) 
+            `INSERT INTO Verify (user_devRant_user_id, user_username, password, magic_word, timestamp) 
             VALUES (${devRant_user_id},"${username}",${timestamp})`
             , function (error, results, fields) {
 
