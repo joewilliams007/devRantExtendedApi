@@ -41,3 +41,13 @@ html,body
     font-size: 36px;
     margin-left: 50px;
   }
+
+  .navtitle {
+
+    position: sticky;
+    top: 0;
+    background-color:#474E68;
+    width: 100%;
+    padding: 10px;
+   
+  }
