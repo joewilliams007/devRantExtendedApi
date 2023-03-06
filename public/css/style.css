@@ -87,3 +87,15 @@ html,body
   .button:hover {
     background-color: #404258;
   }
+
+  .footer-overlay {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: 10px;
+    animation: overlayMoveUp .5s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
