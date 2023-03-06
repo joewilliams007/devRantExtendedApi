@@ -73,3 +73,16 @@ html,body
       You can instead use position:absolute or display:inline-block
       if this fits better with your design */
   }
+
+  .button {
+    padding: 10px 20px;
+    background-color: #474E68;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+    font-family: nunito;
+  }
+  
+  .button:hover {
+    background-color: #404258;
+  }
