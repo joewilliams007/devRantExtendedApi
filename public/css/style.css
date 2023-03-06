@@ -46,13 +46,15 @@ html,body
 
     position: sticky;
     top: 0;
-    background-color:#474E68;
+    backdrop-filter: blur(10px) saturate(70%);
+   
     width: 100%;
     padding: 10px;
-   
+    
   }
 
-  
+  background-color:#474E68;
+
   @font-face {
     font-family: 'nunito';
     src: URL('../nunito.ttf') format('truetype');
