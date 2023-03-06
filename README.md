@@ -7,7 +7,7 @@ blocking users posts
 
 a public chat
 
-## Considering:
+### Considering:
 
 awards ? use own points to give out awards. the API will keep track of how many points you have used!
 
