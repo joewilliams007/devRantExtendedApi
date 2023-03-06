@@ -4,6 +4,7 @@ module.exports = (req, res) => {
 
     var db = require('./db');
     var post_id = 2121
+    var timestamp = Math.floor(new Date().getTime() / 1000) // in seconds
 
     checkExistence()
 
