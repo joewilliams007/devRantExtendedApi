@@ -46,6 +46,8 @@ module.exports = (req, res) => {
 
                 if (dbRes.verify_key == verify_key) {
                     finishRegistration(element, dbRes)
+                } else {
+                    console.log("wrong key pair "+dbRes.verify_key+" "+verify_key)
                 }
             });
     }
