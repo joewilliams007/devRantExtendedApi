@@ -12,13 +12,13 @@ module.exports = (req, res) => {
             `SELECT COUNT(*) AS RowCount FROM Users WHERE devRant_user_id=${devRant_user_id}`
             , function (error, results, fields) {
                 if (error) {
-
-                }
-    
-                if (Number(results[0].RowCount) == 0) {
-                    createExistence();
+                    console.log(error)
                 } else {
-                    console.log("account already exists")
+                    if (Number(results[0].RowCount) == 0) {
+                        createExistence();
+                    } else {
+                        console.log("account already exists")
+                    }
                 }
 
         });
